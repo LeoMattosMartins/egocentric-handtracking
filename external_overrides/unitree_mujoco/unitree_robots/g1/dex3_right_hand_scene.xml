@@ -1,0 +1,84 @@
+<mujoco model="unitree_dex3_right_hand_scene">
+  <compiler angle="radian" meshdir="meshes" autolimits="true"/>
+
+  <option timestep="0.005" gravity="0 0 0"/>
+
+  <visual>
+    <global offwidth="1280" offheight="720"/>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.35 0.35 0.35" specular="0.1 0.1 0.1"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.25 0.35 0.45" rgb2="0.02 0.03 0.04" width="512" height="3072"/>
+    <texture type="2d" name="grid" builtin="checker" mark="edge" rgb1="0.16 0.2 0.24" rgb2="0.08 0.11 0.14" markrgb="0.55 0.65 0.75" width="300" height="300"/>
+    <material name="grid" texture="grid" texuniform="true" texrepeat="4 4" reflectance="0.15"/>
+    <material name="palm" rgba="0.76 0.78 0.8 1"/>
+    <material name="thumb" rgba="0.9 0.74 0.45 1"/>
+    <material name="index" rgba="0.55 0.78 0.95 1"/>
+    <material name="middle" rgba="0.62 0.86 0.64 1"/>
+
+    <mesh name="right_hand_palm_link" file="right_hand_palm_link.STL"/>
+    <mesh name="right_hand_thumb_0_link" file="right_hand_thumb_0_link.STL"/>
+    <mesh name="right_hand_thumb_1_link" file="right_hand_thumb_1_link.STL"/>
+    <mesh name="right_hand_thumb_2_link" file="right_hand_thumb_2_link.STL"/>
+    <mesh name="right_hand_index_0_link" file="right_hand_index_0_link.STL"/>
+    <mesh name="right_hand_index_1_link" file="right_hand_index_1_link.STL"/>
+    <mesh name="right_hand_middle_0_link" file="right_hand_middle_0_link.STL"/>
+    <mesh name="right_hand_middle_1_link" file="right_hand_middle_1_link.STL"/>
+  </asset>
+
+  <default>
+    <joint damping="0.08" armature="0.001"/>
+    <geom contype="0" conaffinity="0" density="0"/>
+  </default>
+
+  <worldbody>
+    <light pos="0 -0.8 1.2" dir="0 0 -1" directional="true"/>
+    <geom name="floor" pos="0 0 -0.22" size="1.5 1.5 0.02" type="plane" material="grid"/>
+
+    <body name="right_hand_root" pos="0 0 0.15">
+      <freejoint name="right_hand_root_joint"/>
+      <inertial pos="0.03 0 0" mass="0.20" diaginertia="0.0004 0.0004 0.0004"/>
+      <geom name="palm_mesh" type="mesh" mesh="right_hand_palm_link" material="palm"/>
+
+      <body name="thumb_0_link" pos="0.018 -0.036 0.002" quat="0.9239 0 0 0.3827">
+        <inertial pos="0.015 0 0" mass="0.02" diaginertia="0.00002 0.00002 0.00002"/>
+        <joint name="thumb_0" type="hinge" axis="0 0 1" range="-1.2 1.2"/>
+        <geom type="mesh" mesh="right_hand_thumb_0_link" material="thumb"/>
+        <body name="thumb_1_link" pos="0.028 -0.012 0.000">
+          <inertial pos="0.014 0 0" mass="0.02" diaginertia="0.00002 0.00002 0.00002"/>
+          <joint name="thumb_1" type="hinge" axis="0 1 0" range="0 1.8"/>
+          <geom type="mesh" mesh="right_hand_thumb_1_link" material="thumb"/>
+          <body name="thumb_2_link" pos="0.026 0 0">
+            <inertial pos="0.012 0 0" mass="0.015" diaginertia="0.000015 0.000015 0.000015"/>
+            <joint name="thumb_2" type="hinge" axis="0 1 0" range="0 1.8"/>
+            <geom type="mesh" mesh="right_hand_thumb_2_link" material="thumb"/>
+          </body>
+        </body>
+      </body>
+
+      <body name="index_0_link" pos="0.060 -0.018 0.018">
+        <inertial pos="0.018 0 0" mass="0.025" diaginertia="0.000025 0.000025 0.000025"/>
+        <joint name="index_0" type="hinge" axis="0 1 0" range="0 1.8"/>
+        <geom type="mesh" mesh="right_hand_index_0_link" material="index"/>
+        <body name="index_1_link" pos="0.038 0 0">
+          <inertial pos="0.018 0 0" mass="0.02" diaginertia="0.00002 0.00002 0.00002"/>
+          <joint name="index_1" type="hinge" axis="0 1 0" range="0 1.8"/>
+          <geom type="mesh" mesh="right_hand_index_1_link" material="index"/>
+        </body>
+      </body>
+
+      <body name="middle_0_link" pos="0.063 0.006 0.018">
+        <inertial pos="0.019 0 0" mass="0.025" diaginertia="0.000025 0.000025 0.000025"/>
+        <joint name="middle_0" type="hinge" axis="0 1 0" range="0 1.8"/>
+        <geom type="mesh" mesh="right_hand_middle_0_link" material="middle"/>
+        <body name="middle_1_link" pos="0.041 0 0">
+          <inertial pos="0.018 0 0" mass="0.02" diaginertia="0.00002 0.00002 0.00002"/>
+          <joint name="middle_1" type="hinge" axis="0 1 0" range="0 1.8"/>
+          <geom type="mesh" mesh="right_hand_middle_1_link" material="middle"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>
