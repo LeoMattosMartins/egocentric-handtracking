@@ -1,0 +1,133 @@
+{"kind":"deck","id":"pr/aavpe2","name":"Deck"}
+{"kind":"layout","layoutId":"c97063cf-0fbe-496a-b2fb-e2fe5ce40e5f","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"9138f846-5b99-4ed2-acf8-35c903a2e684","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/mbvd09","slide":1,"title":"DRAFT PROJECT REPORT","textShapes":9}
+{"kind":"textbox","id":"sh/oj2t83it","slide":1,"text":"DRAFT PROJECT REPORT","textPreview":"DRAFT PROJECT REPORT","textChars":20,"textLines":1,"bbox":[72,64,360,28]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":1,"text":"Egocentric Hand Motion To Robot Simulation","textPreview":"Egocentric Hand Motion To Robot Simulation","textChars":42,"textLines":1,"bbox":[72,150,760,150]}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":1,"text":"Turning repeated first-person hand videos plus IMU context into smoothed hand intent, averaged motion, and MuJoCo simulation targets.","textPreview":"Turning repeated first-person hand videos plus IMU context into smoothed hand intent, averaged motion, and MuJoCo simulation targets.","textChars":133,"textLines":1,"bbox":[76,330,690,82]}
+{"kind":"shape","id":"sh/dsji5sne","slide":1,"bbox":[76,462,210,34]}
+{"kind":"textbox","id":"sh/o7qpg3ex","slide":1,"text":"Interpolated handouts","textPreview":"Interpolated handouts","textChars":21,"textLines":1,"bbox":[90,469,182,18]}
+{"kind":"shape","id":"sh/vmtwra5g","slide":1,"bbox":[304,462,220,34]}
+{"kind":"textbox","id":"sh/61032lsz","slide":1,"text":"Five-finger simulation","textPreview":"Five-finger simulation","textChars":22,"textLines":1,"bbox":[318,469,192,18]}
+{"kind":"shape","id":"sh/dg7adsji","slide":1,"bbox":[542,462,180,34]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":1,"text":"Training dataset","textPreview":"Training dataset","textChars":16,"textLines":1,"bbox":[556,469,152,18]}
+{"kind":"shape","id":"sh/mtwra5gb","slide":1,"bbox":[870,118,300,430]}
+{"kind":"textbox","id":"sh/fepkzupw","slide":1,"text":"Current state","textPreview":"Current state","textChars":13,"textLines":1,"bbox":[904,154,230,28]}
+{"kind":"textbox","id":"sh/4zidonyd","slide":1,"text":"Working prototype\nnot robot-ready yet","textPreview":"Working prototype | not robot-ready yet","textChars":37,"textLines":2,"bbox":[904,218,230,160]}
+{"kind":"textbox","id":"sh/xkf6dcbu","slide":1,"text":"The simulation can show the averaged hand motion, now including wrist rotation, while exposing where sensing and modeling still fall short.","textPreview":"The simulation can show the averaged hand motion, now including wrist rotation, while exposing where sensing and modeling still fall short.","textChars":139,"textLines":1,"bbox":[904,426,230,92]}
+{"kind":"notes","id":"nt/mbvd09","slide":1,"text":""}
+{"kind":"slide","id":"sl/ry1obo","slide":2,"title":"STARTING INTUITION","textShapes":10}
+{"kind":"textbox","id":"sh/szqtcj6t","slide":2,"text":"STARTING INTUITION","textPreview":"STARTING INTUITION","textChars":18,"textLines":1,"bbox":[72,52,520,28]}
+{"kind":"textbox","id":"sh/3ex0nuxc","slide":2,"text":"The first bet was biological, then practical","textPreview":"The first bet was biological, then practical","textChars":44,"textLines":1,"bbox":[72,84,980,58]}
+{"kind":"shape","id":"sh/at47y1kr","slide":2,"bbox":[82,190,500,330]}
+{"kind":"shape","id":"sh/l87ed8ba","slide":2,"bbox":[698,190,500,330]}
+{"kind":"textbox","id":"sh/sneloj2t","slide":2,"text":"Hand meshes","textPreview":"Hand meshes","textChars":11,"textLines":1,"bbox":[118,224,300,34]}
+{"kind":"textbox","id":"sh/32lszqtc","slide":2,"text":"A full hand mesh should be more faithful than sparse points because real hands are surfaces with anatomical constraints, occlusions, and contact.","textPreview":"A full hand mesh should be more faithful than sparse points because real hands are surfaces with anatomical constraints, occlusions, and ...","textChars":145,"textLines":1,"bbox":[118,292,390,122]}
+{"kind":"textbox","id":"sh/ahoza1gv","slide":2,"text":"Left as future work: robust egocentric mesh recovery needs more compute and model tuning than was available for this stage.","textPreview":"Left as future work: robust egocentric mesh recovery needs more compute and model tuning than was available for this stage.","textChars":123,"textLines":1,"bbox":[118,438,402,58]}
+{"kind":"textbox","id":"sh/lwval87e","slide":2,"text":"21-point tracking","textPreview":"21-point tracking","textChars":17,"textLines":1,"bbox":[734,224,320,34]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":2,"text":"MediaPipe landmarks made the project tractable: enough structure to estimate fingers and palm orientation, light enough to iterate quickly.","textPreview":"MediaPipe landmarks made the project tractable: enough structure to estimate fingers and palm orientation, light enough to iterate quickly.","textChars":139,"textLines":1,"bbox":[734,292,390,122]}
+{"kind":"textbox","id":"sh/2lszqtcj","slide":2,"text":"Tradeoff: easier to run, harder to recover metric depth and impossible to fully solve occlusion.","textPreview":"Tradeoff: easier to run, harder to recover metric depth and impossible to fully solve occlusion.","textChars":96,"textLines":1,"bbox":[734,438,402,58]}
+{"kind":"textbox","id":"sh/v6psfil0","slide":2,"text":"Egocentric hand motion to robot simulation","textPreview":"Egocentric hand motion to robot simulation","textChars":42,"textLines":1,"bbox":[72,668,520,22]}
+{"kind":"textbox","id":"sh/knih4byh","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1140,666,68,24]}
+{"kind":"notes","id":"nt/ry1obo","slide":2,"text":""}
+{"kind":"slide","id":"sl/oxol93","slide":3,"title":"SYSTEM FLOW","textShapes":12}
+{"kind":"textbox","id":"sh/adsji5sn","slide":3,"text":"SYSTEM FLOW","textPreview":"SYSTEM FLOW","textChars":11,"textLines":1,"bbox":[72,52,520,28]}
+{"kind":"textbox","id":"sh/h4byhgn2","slide":3,"text":"What the pipeline does now","textPreview":"What the pipeline does now","textChars":26,"textLines":1,"bbox":[72,84,980,58]}
+{"kind":"shape","id":"sh/sji5snel","slide":3,"bbox":[72,250,124,76]}
+{"kind":"textbox","id":"sh/3m94fu18","slide":3,"text":"Video + IMU","textPreview":"Video + IMU","textChars":11,"textLines":1,"bbox":[84,268,100,40]}
+{"kind":"shape","id":"sh/a5gbq1or","slide":3,"bbox":[200,288,20,0]}
+{"kind":"shape","id":"sh/lszqtcj6","slide":3,"bbox":[228,250,124,76]}
+{"kind":"textbox","id":"sh/s72x4nap","slide":3,"text":"MediaPipe points","textPreview":"MediaPipe points","textChars":16,"textLines":1,"bbox":[240,268,100,40]}
+{"kind":"shape","id":"sh/zidonyd0","slide":3,"bbox":[356,288,20,0]}
+{"kind":"shape","id":"sh/a1gvy90j","slide":3,"bbox":[384,250,124,76]}
+{"kind":"textbox","id":"sh/8nqxs72x","slide":3,"text":"AHRS filter","textPreview":"AHRS filter","textChars":11,"textLines":1,"bbox":[396,268,100,40]}
+{"kind":"shape","id":"sh/18jqh0fe","slide":3,"bbox":[512,288,20,0]}
+{"kind":"shape","id":"sh/qh0fepkz","slide":3,"bbox":[540,250,124,76]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":3,"text":"IK smoothing","textPreview":"IK smoothing","textChars":12,"textLines":1,"bbox":[552,268,100,40]}
+{"kind":"shape","id":"sh/8bat47y1","slide":3,"bbox":[668,288,20,0]}
+{"kind":"shape","id":"sh/1w7mp0bi","slide":3,"bbox":[696,250,124,76]}
+{"kind":"textbox","id":"sh/q5o7qpg3","slide":3,"text":"Full-frame data","textPreview":"Full-frame data","textChars":15,"textLines":1,"bbox":[708,268,100,40]}
+{"kind":"shape","id":"sh/jqh0fepk","slide":3,"bbox":[824,288,20,0]}
+{"kind":"shape","id":"sh/c3ylc7u5","slide":3,"bbox":[852,250,124,76]}
+{"kind":"textbox","id":"sh/1kre1w7m","slide":3,"text":"Average action","textPreview":"Average action","textChars":14,"textLines":1,"bbox":[864,268,100,40]}
+{"kind":"shape","id":"sh/58z25kb6","slide":3,"bbox":[980,288,20,0]}
+{"kind":"shape","id":"sh/gn29gr2p","slide":3,"bbox":[1008,250,124,76]}
+{"kind":"textbox","id":"sh/n29gr2p8","slide":3,"text":"MuJoCo render","textPreview":"MuJoCo render","textChars":13,"textLines":1,"bbox":[1020,268,100,40]}
+{"kind":"textbox","id":"sh/yhgn29gr","slide":3,"text":"The important change is that interpolation happens before dataset construction, so the model sees a complete action timeline instead of only the frames where the detector succeeded.","textPreview":"The important change is that interpolation happens before dataset construction, so the model sees a complete action timeline instead of o...","textChars":181,"textLines":1,"bbox":[130,405,1020,76]}
+{"kind":"textbox","id":"sh/5wjudg7a","slide":3,"text":"Egocentric hand motion to robot simulation","textPreview":"Egocentric hand motion to robot simulation","textChars":42,"textLines":1,"bbox":[72,668,520,22]}
+{"kind":"textbox","id":"sh/gbq1oryt","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1140,666,68,24]}
+{"kind":"notes","id":"nt/oxol93","slide":3,"text":""}
+{"kind":"slide","id":"sl/fozavv","slide":4,"title":"MISSING FRAMES","textShapes":17}
+{"kind":"textbox","id":"sh/crmhk3q5","slide":4,"text":"MISSING FRAMES","textPreview":"MISSING FRAMES","textChars":14,"textLines":1,"bbox":[72,52,520,28]}
+{"kind":"textbox","id":"sh/j6tovaho","slide":4,"text":"The hard part was not detection, it was continuity","textPreview":"The hard part was not detection, it was continuity","textChars":50,"textLines":1,"bbox":[72,84,980,58]}
+{"kind":"shape","id":"sh/ulwval87","slide":4,"bbox":[84,200,250,132]}
+{"kind":"textbox","id":"sh/1kre1w7m","slide":4,"text":"7,124","textPreview":"7,124","textChars":5,"textLines":1,"bbox":[106,220,205,54]}
+{"kind":"textbox","id":"sh/c3ylc7u5","slide":4,"text":"observation rows","textPreview":"observation rows","textChars":16,"textLines":1,"bbox":[108,278,202,22]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":4,"text":"full-frame dataset","textPreview":"full-frame dataset","textChars":18,"textLines":1,"bbox":[108,302,202,22]}
+{"kind":"shape","id":"sh/uxc3ylc7","slide":4,"bbox":[376,200,250,132]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":4,"text":"72","textPreview":"72","textChars":2,"textLines":1,"bbox":[398,220,205,54]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":4,"text":"features","textPreview":"features","textChars":8,"textLines":1,"bbox":[400,278,202,22]}
+{"kind":"textbox","id":"sh/ytsvu9kn","slide":4,"text":"landmarks + root + flags","textPreview":"landmarks + root + flags","textChars":24,"textLines":1,"bbox":[400,302,202,22]}
+{"kind":"shape","id":"sh/neloj2t8","slide":4,"bbox":[668,200,250,132]}
+{"kind":"textbox","id":"sh/czed8v6p","slide":4,"text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[690,220,205,54]}
+{"kind":"textbox","id":"sh/5kb6xkf6","slide":4,"text":"videos averaged","textPreview":"videos averaged","textChars":15,"textLines":1,"bbox":[692,278,202,22]}
+{"kind":"textbox","id":"sh/u54zidon","slide":4,"text":"same action family","textPreview":"same action family","textChars":18,"textLines":1,"bbox":[692,302,202,22]}
+{"kind":"shape","id":"sh/nqxs72x4","slide":4,"bbox":[960,200,250,132]}
+{"kind":"textbox","id":"sh/cbulwval","slide":4,"text":"360","textPreview":"360","textChars":3,"textLines":1,"bbox":[982,220,205,54]}
+{"kind":"textbox","id":"sh/5sneloj2","slide":4,"text":"average frames","textPreview":"average frames","textChars":14,"textLines":1,"bbox":[984,278,202,22]}
+{"kind":"textbox","id":"sh/y90je9cv","slide":4,"text":"canonical timeline","textPreview":"canonical timeline","textChars":18,"textLines":1,"bbox":[984,302,202,22]}
+{"kind":"textbox","id":"sh/nuxc3ylc","slide":4,"text":"Each source video still has hundreds of IK-filled frames. That is not hidden; the handout overlays label detected versus interpolated frames so the uncertainty remains visible.","textPreview":"Each source video still has hundreds of IK-filled frames. That is not hidden; the handout overlays label detected versus interpolated fra...","textChars":176,"textLines":1,"bbox":[126,410,1028,84]}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":4,"text":"Egocentric hand motion to robot simulation","textPreview":"Egocentric hand motion to robot simulation","textChars":42,"textLines":1,"bbox":[72,668,520,22]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1140,666,68,24]}
+{"kind":"notes","id":"nt/fozavv","slide":4,"text":""}
+{"kind":"slide","id":"sl/lefwnr","slide":5,"title":"LATEST CORRECTION","textShapes":9}
+{"kind":"textbox","id":"sh/a5gbq1or","slide":5,"text":"LATEST CORRECTION","textPreview":"LATEST CORRECTION","textChars":17,"textLines":1,"bbox":[72,52,520,28]}
+{"kind":"textbox","id":"sh/lszqtcj6","slide":5,"text":"Wrist rotation moved into the motion target","textPreview":"Wrist rotation moved into the motion target","textChars":43,"textLines":1,"bbox":[72,84,980,58]}
+{"kind":"shape","id":"sh/s72x4nap","slide":5,"bbox":[160,250,220,76]}
+{"kind":"textbox","id":"sh/3ylc7u54","slide":5,"text":"AHRS camera attitude","textPreview":"AHRS camera attitude","textChars":20,"textLines":1,"bbox":[172,268,196,40]}
+{"kind":"shape","id":"sh/adsji5sn","slide":5,"bbox":[530,250,220,76]}
+{"kind":"textbox","id":"sh/h4byhgn2","slide":5,"text":"Palm delta from landmarks","textPreview":"Palm delta from landmarks","textChars":25,"textLines":1,"bbox":[542,268,196,40]}
+{"kind":"shape","id":"sh/sji5snel","slide":5,"bbox":[900,250,220,76]}
+{"kind":"textbox","id":"sh/za1gvy90","slide":5,"text":"Smoothed root quaternion","textPreview":"Smoothed root quaternion","textChars":24,"textLines":1,"bbox":[912,268,196,40]}
+{"kind":"shape","id":"sh/ap4r65wj","slide":5,"bbox":[390,288,130,0]}
+{"kind":"shape","id":"sh/0je9cvix","slide":5,"bbox":[760,288,130,0]}
+{"kind":"textbox","id":"sh/t47y1kre","slide":5,"text":"+","textPreview":"+","textChars":1,"textLines":1,"bbox":[430,250,60,70]}
+{"kind":"textbox","id":"sh/idonyd0z","slide":5,"text":"The first reliable palm orientation becomes a calibration reference. Later palm poses become relative wrist rotation, composed with IMU/AHRS orientation and smoothed as quaternions.","textPreview":"The first reliable palm orientation becomes a calibration reference. Later palm poses become relative wrist rotation, composed with IMU/A...","textChars":181,"textLines":1,"bbox":[164,405,956,96]}
+{"kind":"textbox","id":"sh/byhgn29g","slide":5,"text":"Egocentric hand motion to robot simulation","textPreview":"Egocentric hand motion to robot simulation","textChars":42,"textLines":1,"bbox":[72,668,520,22]}
+{"kind":"textbox","id":"sh/0rqd4vmt","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1140,666,68,24]}
+{"kind":"notes","id":"nt/lefwnr","slide":5,"text":""}
+{"kind":"slide","id":"sl/71ppq2","slide":6,"title":"SIMULATION ARTIFACT","textShapes":7}
+{"kind":"textbox","id":"sh/fyxobm58","slide":6,"text":"SIMULATION ARTIFACT","textPreview":"SIMULATION ARTIFACT","textChars":19,"textLines":1,"bbox":[72,52,520,28]}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":6,"text":"Five-finger render before robot attachment","textPreview":"Five-finger render before robot attachment","textChars":42,"textLines":1,"bbox":[72,84,980,58]}
+{"kind":"shape","id":"sh/qpg3ex0n","slide":6,"bbox":[838,164,370,410]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":6,"text":"Why Sharpa Wave?","textPreview":"Why Sharpa Wave?","textChars":16,"textLines":1,"bbox":[872,202,280,32]}
+{"kind":"textbox","id":"sh/8v6psfil","slide":6,"text":"The available Unitree G1 assets expose wrist joints but not a true five-finger articulated hand. Sharpa Wave from MuJoCo Menagerie gives a five-finger proxy for validating hand motion before robot attachment.","textPreview":"The available Unitree G1 assets expose wrist joints but not a true five-finger articulated hand. Sharpa Wave from MuJoCo Menagerie gives ...","textChars":208,"textLines":1,"bbox":[872,270,294,160]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":6,"text":"Output: outputs/sharpa_fivefinger_average_motion.mp4","textPreview":"Output: outputs/sharpa_fivefinger_average_motion.mp4","textChars":52,"textLines":1,"bbox":[872,486,292,46]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":6,"text":"Egocentric hand motion to robot simulation","textPreview":"Egocentric hand motion to robot simulation","textChars":42,"textLines":1,"bbox":[72,668,520,22]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1140,666,68,24]}
+{"kind":"image","id":"im/obm58z25","slide":6,"name":"","alt":"Preview of averaged five-finger hand motion in MuJoCo","bbox":[72,164,730,410]}
+{"kind":"notes","id":"nt/71ppq2","slide":6,"text":""}
+{"kind":"slide","id":"sl/t7a5za","slide":7,"title":"BASELINE","textShapes":7}
+{"kind":"textbox","id":"sh/wjudg7ad","slide":7,"text":"BASELINE","textPreview":"BASELINE","textChars":8,"textLines":1,"bbox":[72,52,520,28]}
+{"kind":"textbox","id":"sh/7y1kre1w","slide":7,"text":"Learning signal: useful, but not yet enough","textPreview":"Learning signal: useful, but not yet enough","textChars":43,"textLines":1,"bbox":[72,84,980,58]}
+{"kind":"shape","id":"sh/pwb2hwfy","slide":7,"bbox":[838,190,342,340]}
+{"kind":"textbox","id":"sh/0bi9s36h","slide":7,"text":"Interpretation","textPreview":"Interpretation","textChars":14,"textLines":1,"bbox":[872,224,250,30]}
+{"kind":"textbox","id":"sh/7qpg3ex0","slide":7,"text":"The ridge baseline is a sanity check, not the final policy. Once wrist orientation became real, the wrist errors grew, which points toward a temporal model rather than a linear one.","textPreview":"The ridge baseline is a sanity check, not the final policy. Once wrist orientation became real, the wrist errors grew, which points towar...","textChars":181,"textLines":1,"bbox":[872,288,260,156]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":7,"text":"Next model: GRU, TCN, or small Transformer over smoothed observation windows.","textPreview":"Next model: GRU, TCN, or small Transformer over smoothed observation windows.","textChars":77,"textLines":1,"bbox":[872,478,260,44]}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":7,"text":"Egocentric hand motion to robot simulation","textPreview":"Egocentric hand motion to robot simulation","textChars":42,"textLines":1,"bbox":[72,668,520,22]}
+{"kind":"textbox","id":"sh/0z61032l","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1140,666,68,24]}
+{"kind":"chart","id":"ch/6dcbulwv","slide":7,"name":"","chartType":"bar","bbox":[90,190,690,340]}
+{"kind":"notes","id":"nt/t7a5za","slide":7,"text":""}
+{"kind":"slide","id":"sl/y6e3kw","slide":8,"title":"ROADMAP","textShapes":9}
+{"kind":"textbox","id":"sh/tsvu9kni","slide":8,"text":"ROADMAP","textPreview":"ROADMAP","textChars":7,"textLines":1,"bbox":[72,52,520,28]}
+{"kind":"textbox","id":"sh/m1cfa9w3","slide":8,"text":"Limitations are clear, which is progress","textPreview":"Limitations are clear, which is progress","textChars":40,"textLines":1,"bbox":[72,84,980,58]}
+{"kind":"shape","id":"sh/bm58z25k","slide":8,"bbox":[86,180,500,352]}
+{"kind":"shape","id":"sh/4vmtwra5","slide":8,"bbox":[694,180,500,352]}
+{"kind":"textbox","id":"sh/tgfmlkjm","slide":8,"text":"Still limited by","textPreview":"Still limited by","textChars":16,"textLines":1,"bbox":[122,220,300,32]}
+{"kind":"textbox","id":"sh/mp0bi9s3","slide":8,"text":"• Image-normalized depth, not metric 3D\n• Occlusion in egocentric footage\n• Simple baseline model\n• Five-finger proxy, not Unitree embodiment\n• Standing balance not solved","textPreview":"• Image-normalized depth, not metric 3D | • Occlusion in egocentric footage | • Simple baseline model | • Five-finger proxy, not Unitree ...","textChars":171,"textLines":5,"bbox":[122,286,392,160]}
+{"kind":"textbox","id":"sh/bat47y1k","slide":8,"text":"Next steps","textPreview":"Next steps","textChars":10,"textLines":1,"bbox":[730,220,300,32]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":8,"text":"• Store world landmarks and timestamps\n• Calibrate camera/IMU to robot frame\n• Train a temporal policy\n• Add whole-body balance controller\n• Revisit mesh-based hand recovery with more compute","textPreview":"• Store world landmarks and timestamps | • Calibrate camera/IMU to robot frame | • Train a temporal policy | • Add whole-body balance con...","textChars":191,"textLines":5,"bbox":[730,286,392,174]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":8,"text":"The prototype now makes the intended motion visible, including uncertainty. That is the right staging point before asking a humanoid robot to imitate it.","textPreview":"The prototype now makes the intended motion visible, including uncertainty. That is the right staging point before asking a humanoid robo...","textChars":153,"textLines":1,"bbox":[170,582,940,52]}
+{"kind":"textbox","id":"sh/9gr2p8nq","slide":8,"text":"Egocentric hand motion to robot simulation","textPreview":"Egocentric hand motion to robot simulation","textChars":42,"textLines":1,"bbox":[72,668,520,22]}
+{"kind":"textbox","id":"sh/gvy90je9","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1140,666,68,24]}
+{"kind":"notes","id":"nt/y6e3kw","slide":8,"text":""}

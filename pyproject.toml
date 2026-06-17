@@ -1,0 +1,12 @@
+[project]
+name = "egocentric-handtracking"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mediapipe>=0.10.0",
+    "mujoco>=3.9.0",
+    "opencv-python>=4.8.0.0",
+    "tqdm>=4.65.0",
+]
